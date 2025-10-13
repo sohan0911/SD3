@@ -1,0 +1,77 @@
+                              ┌────────────────────────┐
+                              │     Accommodation      │
+                              ├────────────────────────┤
+                              │ - id: int              │
+                              │ - name: String         │
+                              │ - location: String     │
+                              │ - price: double        │
+                              │ - available: boolean   │
+                              │ - address: Address     │
+                              │ - facilities: List<Facility> │
+                              ├────────────────────────┤
+                              │ + addFacility(Facility)│
+                              │ + listFacilities()     │
+                              │ + setAvailable(boolean)│
+                              │ + isAvailable(): boolean│
+                              │ + printDetails(): void │
+                              └───────────▲────────────┘
+                                          │
+          ┌───────────────────────────────┴───────────────────────────────┐
+          │                                                               │
+  ┌──────────────────────┐                                       ┌─────────────────────┐
+  │        Flat          │                                       │        Room         │
+  ├──────────────────────┤                                       ├─────────────────────┤
+  │ - numBedrooms: int   │                                       │ - roomType: String  │
+  │ - hasKitchen: boolean│                                       │ - sharedBathroom: boolean│
+  │ - hasWashingMachine: boolean │                               │ - furnished: boolean│
+  ├──────────────────────┤                                       ├─────────────────────┤
+  │ + printDetails(): void│                                      │ + printDetails(): void│
+  └──────────────────────┘                                       └─────────────────────┘
+
+
+                ┌─────────────────────┐
+                │      Facility       │
+                ├─────────────────────┤
+                │ - facilityName: String │
+                │ - description: String  │
+                ├─────────────────────┤
+                │ + printDetails(): void │
+                └─────────────────────┘
+
+                ┌─────────────────────┐
+                │       Address       │
+                ├─────────────────────┤
+                │ - street: String    │
+                │ - city: String      │
+                │ - postcode: String  │
+                ├─────────────────────┤
+                │ + printDetails(): void │
+                └─────────────────────┘
+
+
+                ┌─────────────────────┐
+                │        User         │
+                ├─────────────────────┤
+                │ - name: String      │
+                │ - email: String     │
+                │ - userType: String  │
+                ├─────────────────────┤
+                │ + printDetails(): void │
+                └───────────▲───────────┘
+                            │
+                            │ 1
+                            │
+                            │
+                 ┌──────────┴──────────┐
+                 │       Booking       │
+                 ├─────────────────────┤
+                 │ - bookingId: int    │
+                 │ - user: User        │
+                 │ - accommodation: Accommodation │
+                 │ - date: String      │
+                 │ - duration: int     │
+                 ├─────────────────────┤
+                 │ + confirmBooking()  │
+                 │ + cancelBooking()   │
+                 │ + printDetails(): void │
+                 └─────────────────────┘

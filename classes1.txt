@@ -1,0 +1,45 @@
+1. Accommodation 
+
+Represents a general property available for rent.
+Attributes: id, name, location, price, available, facilities: List<Facility>
+Methods: addFacility(), listFacilities(), setAvailable(), printDetails()
+Relationships: Superclass of Flat and Room; aggregates Facility and Address.
+
+2. Flat (Subclass of Accommodation)
+
+A full flat or apartment with extra features.
+Attributes: numBedrooms, hasKitchen, hasWashingMachine
+Methods: printDetails() (overrides parent method)
+
+3. Room (Subclass of Accommodation)
+
+A single rentable room, often within a shared property.
+Attributes: roomType, sharedBathroom, furnished
+Methods: printDetails() (overrides parent method)
+
+4. Facility
+
+Represents additional features or amenities in a property.
+Attributes: facilityName, description
+Methods: printDetails()
+Used by: Accommodation (composition)
+
+5. User
+
+Represents someone using the system to search or book accommodations.
+Attributes: name, email, userType
+Methods: printDetails()
+
+6. Address (for composition
+
+Stores detailed location data for each accommodation.
+Attributes: street, city, postcode
+Methods: printDetails()
+Used by: Accommodation
+
+7. Booking 
+
+Represents a booking made by a user for a specific property.
+Attributes: bookingId, user, accommodation, date, duration
+Methods: confirmBooking(), cancelBooking(), printDetails()
+Used by: User, Accommodation
