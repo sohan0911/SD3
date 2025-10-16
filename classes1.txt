@@ -30,16 +30,40 @@ Represents someone using the system to search or book accommodations.
 Attributes: name, email, userType
 Methods: printDetails()
 
-6. Address (for composition
+6. Landlord (extends User)
+
+Represents property owners who can list and manage accommodations.
+Attributes: listOfAccommodations, rating
+Methods: addAccommodation(), removeAccommodation(), viewBookings()
+
+7. Student (extends User)
+
+Specialized user type with additional info.
+Attributes: universityName, studentId, budget
+Methods: searchByBudget(), printDetails()
+
+8. Address 
 
 Stores detailed location data for each accommodation.
 Attributes: street, city, postcode
 Methods: printDetails()
 Used by: Accommodation
 
-7. Booking 
+9. Booking 
 
 Represents a booking made by a user for a specific property.
 Attributes: bookingId, user, accommodation, date, duration
 Methods: confirmBooking(), cancelBooking(), printDetails()
 Used by: User, Accommodation
+
+10. Payment
+
+Handles booking payments (even if simulated).
+Attributes: paymentId, bookingId, amount, status
+Methods: processPayment(), refund(), printDetails()
+
+11. Review
+
+Represents user feedback for properties.
+Attributes: rating, comment, reviewer, accommodation
+Methods: printReview(), getRating()
